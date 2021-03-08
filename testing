@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  tasks:
+   - name: Precheck for patching
+     script: /tmp/precheck.sh
+     register: yum_test
+   - name: debug test
+     debug:
+      var: yum_test
