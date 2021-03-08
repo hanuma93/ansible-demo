@@ -9,4 +9,4 @@
      register: yum_test
    - name: debug test
      debug:
-      var: yum_test
+      var: yum_test.stdout_lines
